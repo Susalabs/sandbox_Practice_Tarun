@@ -1,8 +1,9 @@
 const express = require('express')
-
+const cors = require('cors')
 const db = require('./models/index')
 const ApiRoutes = require('./routes/index');
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', ApiRoutes);
