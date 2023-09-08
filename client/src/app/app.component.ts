@@ -13,4 +13,9 @@ export class AppComponent {
       this.users=data.data;
     });
   }
+  getUsersFormData(data:any)
+  {
+    this.userData.saveUser(data).subscribe((result)=>{
+    })
+  }
 }

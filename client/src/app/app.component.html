@@ -4,3 +4,11 @@
     {{user.email}}
   </li>
 </ul>
+
+<form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+<input type="text" ngModel name="email" placeholder="Enter name">
+<br><br>
+<input type="text" ngModel name="email" placeholder="Enter email">
+<br><br>
+<button>Add New User</button>
+</form>
