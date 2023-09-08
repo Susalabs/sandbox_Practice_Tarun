@@ -1,7 +1,9 @@
-const User = require('../models/user')
+const db=require('../models/index')
+const User=db.users;
 class UserRepository {
     async createUser(data) {
         try {
+            console.log(User);
             const user = await User.create(
                 data
             )
@@ -16,7 +18,7 @@ class UserRepository {
         try {
             await User.destroy({
                 where: {
-                    userId: userId
+                    id: userId
                 }
             })
             return true;
@@ -28,9 +30,10 @@ class UserRepository {
 
     async updateUser(userId, data) {
         try {
+
             return await User.update(data, {
                 where: {
-                    userId: userId
+                    id: userId
                 },
             })
         } catch (error) {
@@ -59,4 +62,4 @@ class UserRepository {
     }
 }
 
-module.exports = UserRepository;
+module.exports=UserRepository;
