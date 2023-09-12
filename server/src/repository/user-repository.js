@@ -1,5 +1,5 @@
-const db=require('../models/index')
-const User=db.users;
+const {User}=require('../models/index')
+const {Officer}=require('../models/index')
 class UserRepository {
     async createUser(data) {
         try {
@@ -53,7 +53,7 @@ class UserRepository {
     }
     async getAllUser() {
         try {
-            const users = await User.findAll();
+            const users = await Officer.findAll();
             return users;
         } catch (error) {
             console.log("Something went wrong in Repository Layer");
